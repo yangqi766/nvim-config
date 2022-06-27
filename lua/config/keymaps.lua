@@ -49,6 +49,9 @@ keymap("n", "k", "<Plug>(accelerated_jk_k)", {})
 -- Cross line down from the beginning of the line
 keymap("n", "=", "+", opts)
 
+-- Copy to Clipboard
+-- keymap("v", "<C-c>", '"+y', opts)
+
 -- Save & Quit
 keymap("n", "<leader>w", "<cmd>w<CR>", opts)
 keymap("n", "<leader>q", "<cmd>q<CR>", opts)
@@ -90,17 +93,19 @@ keymap("i", "<C-h>", "<Left>", opts)
 keymap("i", "<C-l>", "<Right>", opts)
 keymap("i", "<C-k>", "<Up>", opts)
 keymap("i", "<C-j>", "<Down>", opts)
-
-keymap("i", "<C-o>", "<ESC>o", opts) -- switch to next new line
-keymap("i", "<C-a>", "<ESC>I", opts) -- jump to begin
-keymap("i", "<C-e>", "<ESC>A", opts) -- jump to end
-keymap("i", "<C-d>", "<ESC>lcl", opts) -- delete one char
+keymap("i", "<C-o>", "<ESC>o", opts)      -- switch to next new line
+keymap("i", "<C-a>", "<ESC>I", opts)      -- jump to begin
+keymap("i", "<C-e>", "<ESC>A", opts)      -- jump to end
+keymap("i", "<C-d>", "<ESC>lcl", opts)    -- delete one char
 
 -- command --
 keymap("c", "<C-h>", "<Left>", {})
 keymap("c", "<C-l>", "<Right>", {})
 keymap("c", "<C-a>", "<Home>", {})
 keymap("c", "<C-e>", "<End>", {})
+
+-- easymotion ----------------
+keymap("n", "\\", "<Plug>(easymotion-prefix)", opts)
 
 -- Terminal --
 -- Better terminal navigation

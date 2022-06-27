@@ -42,7 +42,7 @@ vim.g.nvim_tree_icons = {
 	},
 }
 
-local winwidth = 35
+local winwidth = 28
 
 local toggle_width = function(_)
 	local max = 0
