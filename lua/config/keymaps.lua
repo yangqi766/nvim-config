@@ -49,9 +49,6 @@ keymap("n", "k", "<Plug>(accelerated_jk_k)", {})
 -- Cross line down from the beginning of the line
 keymap("n", "=", "+", opts)
 
--- Copy to Clipboard
--- keymap("v", "<C-c>", '"+y', opts)
-
 -- Save & Quit
 keymap("n", "<leader>w", "<cmd>w<CR>", opts)
 keymap("n", "<leader>q", "<cmd>q<CR>", opts)
@@ -93,19 +90,17 @@ keymap("i", "<C-h>", "<Left>", opts)
 keymap("i", "<C-l>", "<Right>", opts)
 keymap("i", "<C-k>", "<Up>", opts)
 keymap("i", "<C-j>", "<Down>", opts)
-keymap("i", "<C-o>", "<ESC>o", opts)      -- switch to next new line
-keymap("i", "<C-a>", "<ESC>I", opts)      -- jump to begin
-keymap("i", "<C-e>", "<ESC>A", opts)      -- jump to end
-keymap("i", "<C-d>", "<ESC>lcl", opts)    -- delete one char
+
+keymap("i", "<C-o>", "<ESC>o", opts) -- switch to next new line
+keymap("i", "<C-a>", "<ESC>I", opts) -- jump to begin
+keymap("i", "<C-e>", "<ESC>A", opts) -- jump to end
+keymap("i", "<C-d>", "<ESC>lcl", opts) -- delete one char
 
 -- command --
 keymap("c", "<C-h>", "<Left>", {})
 keymap("c", "<C-l>", "<Right>", {})
 keymap("c", "<C-a>", "<Home>", {})
 keymap("c", "<C-e>", "<End>", {})
-
--- easymotion ----------------
-keymap("n", "\\", "<Plug>(easymotion-prefix)", opts)
 
 -- Terminal --
 -- Better terminal navigation
@@ -120,7 +115,7 @@ keymap("n", "\\", "<Plug>(easymotion-prefix)", opts)
 -- modify current line                    :   S / cc
 -- modify one current character           :   s
 -- delete current word ,exclude blank     :   diw
--- delete current word,include blank      :   daw
+-- delete current word ,include blank     :   daw
 -- insert at the beginning                :   A
 -- insert at the end                      :   I
 
@@ -134,13 +129,12 @@ keymap("n", "\\", "<Plug>(easymotion-prefix)", opts)
 -- 	cc/S        - Delete current line and enter insert mode
 -- 	2cw         - Delete 2 words and enter insert mode
 --
--- ~            - Toggle the case of character under cursor
+-- ~            - toggle the case of character under cursor
 -- g~           - Toggle case of [motion]
 -- g~w          - Toggle case of cursor -> end of word
 -- tr|ue -> g~w -> trUE
 -- g~iw - Toggle case of entire word under cursor
--- tr|ue -> g~iw -> TRUE
-
+-- tr|ue -> g~iw -> tRUE
 
 ------- easymotion mapping -------------
 -- \f{char}      | Find {char} to the right. See |f|.

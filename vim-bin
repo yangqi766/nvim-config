@@ -1,0 +1,5 @@
+#!/bin/sh
+
+export RUNTIME_DIR="${RUNTIME_DIR:-"/home/yangqi766/.config/nvim-config"}"
+
+exec nvim -u "$RUNTIME_DIR/init.lua" "$@"
