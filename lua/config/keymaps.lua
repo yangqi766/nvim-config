@@ -102,6 +102,9 @@ keymap("c", "<C-l>", "<Right>", {})
 keymap("c", "<C-a>", "<Home>", {})
 keymap("c", "<C-e>", "<End>", {})
 
+-- tagbar
+keymap("n", "<C-t>", ":Tagbar<CR>", opts)
+
 -- Terminal --
 -- Better terminal navigation
 -- keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
@@ -136,8 +139,8 @@ keymap("c", "<C-e>", "<End>", {})
 -- g~iw - Toggle case of entire word under cursor
 -- tr|ue -> g~iw -> tRUE
 
-keymap("n", "\\", "<Plug>(easymotion-prefix)", opts)
 ------- easymotion mapping -------------
+keymap("n", "\\", "<Plug>(easymotion-prefix)", opts)
 -- \f{char}      | Find {char} to the right. See |f|.
 -- \F{char}      | Find {char} to the left. See |F|.
 -- \t{char}      | Till before the {char} to the right. See |t|.

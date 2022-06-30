@@ -96,9 +96,11 @@ return packer.startup(function(use)
 
 	-- Faster moving and easy action
 	use({ "rainbowhxch/accelerated-jk.nvim" })
-  use({ "easymotion/vim-easymotion" })
-  use({ "tpope/vim-surround" })
+	use({ "easymotion/vim-easymotion" })
+	use({ "tpope/vim-surround" })
 
+	-- Tagbar
+	use("preservim/tagbar")
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
