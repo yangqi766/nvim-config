@@ -136,6 +136,7 @@ keymap("c", "<C-e>", "<End>", {})
 -- g~iw - Toggle case of entire word under cursor
 -- tr|ue -> g~iw -> tRUE
 
+keymap("n", "\\", "<Plug>(easymotion-prefix)", opts)
 ------- easymotion mapping -------------
 -- \f{char}      | Find {char} to the right. See |f|.
 -- \F{char}      | Find {char} to the left. See |F|.

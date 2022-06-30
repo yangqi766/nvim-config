@@ -27,13 +27,15 @@ null_ls.setup({
 			},
 			prefer_local = "node_modules/.bin",
 		}),
-		formatting.black.with({ extra_args = { "--fast", "--line-length=100" } }),
+		formatting.black.with({ extra_args = { "--fast", "--line-length=100", "-S" } }),
 		formatting.stylua,
 		formatting.golines,
 		diagnostics.eslint.with({
 			prefer_local = "node_modules/.bin",
 		}),
-		diagnostics.flake8,
+		diagnostics.flake8.with({
+			extra_args = { "--max-line-length=150", "--inline-quotes=double,single" },
+		}),
 	},
 	on_attach = function(client)
 		vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()']])
