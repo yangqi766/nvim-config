@@ -105,6 +105,10 @@ keymap("c", "<C-e>", "<End>", {})
 -- tagbar
 keymap("n", "<C-t>", ":Tagbar<CR>", opts)
 
+-- copy buffer terminal
+keymap("v", "<leader>p", '"*p', opts)
+keymap("v", "<leader>y", '"*y', opts)
+
 -- Terminal --
 -- Better terminal navigation
 -- keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)

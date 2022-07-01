@@ -63,9 +63,9 @@ bufferline.setup({
 				return vim.fn.fnamemodify(buf.name, ":t:r")
 			end
 		end,
-		max_name_length = 20,
-		max_prefix_length = 15, -- prefix used when a buffer is de-duplicated
-		tab_size = 18,
+		max_name_length = 30,
+		max_prefix_length = 30, -- prefix used when a buffer is de-duplicated
+		tab_size = 20,
 		diagnostics = "nvim_lsp",
 		diagnostics_update_in_insert = false,
 		diagnostics_indicator = diagnostics_indicator,
@@ -81,7 +81,7 @@ bufferline.setup({
 			},
 			{
 				filetype = "NvimTree",
-				text = "Tree Explorer",
+				text = "Explorer Tree",
 				-- highlight = "PanelHeading",
 				highlight = "Directory",
 				-- padding = 1,
@@ -124,7 +124,8 @@ bufferline.setup({
 			gui = "italic",
 		},
 		buffer_selected = {
-			gui = "bold",
+			-- gui = "bold",
+			guifg = "#FFE6B3",
 		},
 	},
 })
