@@ -52,7 +52,8 @@ keymap("n", "=", "+", opts)
 -- Save & Quit
 keymap("n", "<leader>w", "<cmd>w<CR>", opts)
 keymap("n", "<leader>q", "<cmd>q<CR>", opts)
-keymap("n", "<C-q>", ":q!<CR>", opts) -- force quit
+keymap("n", "qq", "<cmd>Bdelete<CR>", opts)
+keymap("n", "<C-q>", "<cmd>q!<CR>", opts)
 
 -- Double leader key for toggling visual-line mode
 keymap("n", "<leader><leader>", "V", opts)
@@ -123,25 +124,29 @@ keymap("v", "<leader>y", '"*y', opts)
 -- modify one current character           :   s
 -- delete current word ,exclude blank     :   diw
 -- delete current word ,include blank     :   daw
--- insert at the beginning                :   A
--- insert at the end                      :   I
+-- insert at the beginning                :   I
+-- insert at the end                      :   A
 
+--  %           - match the \( \)
+--  b/B         - back previous word
+--  r           - replace current char
+--  R           - change to replace mode
+--  f/F         - search char in current line
+--  J           - combine two lines
 --  d           - Delete: [range]d<motion>
 -- 	dd          - delete current line
 -- 	dj          - delete current and next line (j = down)
 -- 	2dj         - delete current and 2 lines downward
---
---  c           - Change (Same as d but put me in insert mode)
+
+--  ciw         - Change word in insert mode
+--  viw         - Put current word with visual mode
 -- 	cw          - change word
 -- 	cc/S        - Delete current line and enter insert mode
 -- 	2cw         - Delete 2 words and enter insert mode
---
--- ~            - toggle the case of character under cursor
+
+--  ~           - toggle the case of character under cursor
 -- g~           - Toggle case of [motion]
--- g~w          - Toggle case of cursor -> end of word
--- tr|ue -> g~w -> trUE
--- g~iw - Toggle case of entire word under cursor
--- tr|ue -> g~iw -> tRUE
+-- g~w          - toggle case of cursor -> end of word
 
 ------- easymotion mapping -------------
 keymap("n", "\\", "<Plug>(easymotion-prefix)", opts)

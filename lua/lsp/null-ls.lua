@@ -30,7 +30,7 @@ null_ls.setup({
 		formatting.black.with({ extra_args = { "--fast", "--line-length=100", "-S" } }),
 		formatting.stylua,
 		formatting.golines,
-		diagnostics.eslint.with({
+		diagnostics.eslint_d.with({
 			prefer_local = "node_modules/.bin",
 		}),
 		diagnostics.flake8.with({

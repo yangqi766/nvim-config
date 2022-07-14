@@ -81,11 +81,11 @@ bufferline.setup({
 			},
 			{
 				filetype = "NvimTree",
-				text = "Explorer Tree",
+				text = "Explorer",
 				-- highlight = "PanelHeading",
 				highlight = "Directory",
 				-- padding = 1,
-				text_align = "left",
+				text_align = "center",
 			},
 			{
 				filetype = "DiffviewFiles",

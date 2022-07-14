@@ -58,7 +58,7 @@ return packer.startup(function(use)
 	-- Colorschemes
 	-- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
 	use("lunarvim/darkplus.nvim")
-	use("lunarvim/onedarker.nvim")
+	use({"lunarvim/onedarker.nvim", commit = "b00dd2189f264c5aeb4cf04c59439655ecd573ec"})
 	use("w0ng/vim-hybrid")
 
 	-- cmp plugins

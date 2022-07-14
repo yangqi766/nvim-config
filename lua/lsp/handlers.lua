@@ -113,7 +113,7 @@ local function lsp_keymaps(bufnr)
 end
 
 M.on_attach = function(client, bufnr)
-	for _, server in ipairs({ "sumneko_lua", "tsserver", "yamlls", "gopls", "html" }) do
+	for _, server in ipairs({ "sumneko_lua", "tsserver", "yamlls", "gopls", "html", "volar" }) do
 		if client.name == server then
 			client.resolved_capabilities.document_formatting = false
 			client.resolved_capabilities.document_range_formatting = false

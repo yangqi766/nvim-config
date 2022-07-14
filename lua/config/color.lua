@@ -6,7 +6,6 @@ vim.api.nvim_exec(
     colorscheme default
     set background=dark
   endtry
-
    " let g:colors_name = "hybrid"
    " execute 'source' fnameescape("~/.config/nvim-config/themes/hybrid.vim")
 ]],
