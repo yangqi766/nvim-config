@@ -79,14 +79,14 @@ bufferline.setup({
 				highlight = "PanelHeading",
 				padding = 1,
 			},
-			{
-				filetype = "NvimTree",
-				text = "Explorer",
-				-- highlight = "PanelHeading",
-				highlight = "Directory",
-				-- padding = 1,
-				text_align = "center",
-			},
+			-- {
+			-- 	filetype = "NvimTree",
+			-- 	text = "Explorer",
+			-- 	-- highlight = "PanelHeading",
+			-- 	highlight = "Directory",
+			-- 	-- padding = 1,
+			-- 	text_align = "center",
+			-- },
 			{
 				filetype = "DiffviewFiles",
 				text = "Diff View",

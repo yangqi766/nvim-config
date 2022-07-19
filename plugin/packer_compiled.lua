@@ -234,6 +234,11 @@ _G.packer_plugins = {
     path = "/home/zhenjiema/.local/share/nvim/site/pack/packer/start/project.nvim",
     url = "https://github.com/ahmedkhalf/project.nvim"
   },
+  tagbar = {
+    loaded = true,
+    path = "/home/zhenjiema/.local/share/nvim/site/pack/packer/start/tagbar",
+    url = "https://github.com/preservim/tagbar"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/zhenjiema/.local/share/nvim/site/pack/packer/start/telescope.nvim",

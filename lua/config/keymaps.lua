@@ -41,6 +41,7 @@ keymap("n", "<leader>5", ":BufferLineGoToBuffer 5<CR>", opts)
 keymap("n", "<leader>6", ":BufferLineGoToBuffer 6<CR>", opts)
 keymap("n", "<leader>7", ":BufferLineGoToBuffer 7<CR>", opts)
 keymap("n", "<leader>8", ":BufferLineGoToBuffer 8<CR>", opts)
+keymap("n", "<leader>c", ":BufferLinePickClose<CR>", opts)
 
 -- accelerated j k
 keymap("n", "j", "<Plug>(accelerated_jk_j)", {})
@@ -91,11 +92,16 @@ keymap("i", "<C-h>", "<Left>", opts)
 keymap("i", "<C-l>", "<Right>", opts)
 keymap("i", "<C-k>", "<Up>", opts)
 keymap("i", "<C-j>", "<Down>", opts)
-
+keymap("i", "<C-w>", "<ESC>wa", opts)
+keymap("i", "<C-b>", "<ESC>bi", opts)
 keymap("i", "<C-o>", "<ESC>o", opts) -- switch to next new line
 keymap("i", "<C-a>", "<ESC>I", opts) -- jump to begin
 keymap("i", "<C-e>", "<ESC>A", opts) -- jump to end
 keymap("i", "<C-d>", "<ESC>lcl", opts) -- delete one char
+keymap("i", "<C-h>", "<Left>", opts)
+keymap("i", "<C-l>", "<Right>", opts)
+keymap("i", "<C-a>", "<Home>", opts)
+keymap("i", "<C-e>", "<End>", opts)
 
 -- command --
 keymap("c", "<C-h>", "<Left>", {})
