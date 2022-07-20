@@ -85,7 +85,7 @@ nvim_tree.setup({
 		auto_open = true,
 	},
 	auto_close = true,
-	open_on_tab = false,
+	open_on_tab = true,
 	hijack_cursor = false,
 	update_cwd = false,
 	update_to_buf_dir = {
@@ -141,6 +141,7 @@ nvim_tree.setup({
 				{ key = "x", action = "cut" },
 				{ key = "p", action = "paste" },
 				{ key = "w", action = "toggle_width", action_cb = toggle_width },
+				{ key = "/", action = "fuzzy_finder" },
 			},
 		},
 		number = false,

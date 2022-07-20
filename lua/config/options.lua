@@ -1,8 +1,6 @@
 local options = {
 	backup = false, -- creates a backup file
 	clipboard = "unnamedplus", -- allows neovim to access the system clipboard
-	cmdheight = 1, -- more space in the neovim command line for displaying messages
-	colorcolumn = "99999", -- fixes indentline for now
 	completeopt = { "menuone", "noselect" },
 	conceallevel = 0, -- so that `` is visible in markdown files
 	fileencoding = "utf-8", -- the encoding written to a file
@@ -12,10 +10,9 @@ local options = {
 	hidden = true, -- required to keep multiple buffers and open multiple buffers
 	hlsearch = true, -- highlight all matches on previous search pattern
 	ignorecase = true, -- ignore case in search patterns
-	mouse = "av", -- allow the mouse to be used in neovim
+	mouse = "nv", -- allow the mouse to be used in neovim
 	pumheight = 10, -- pop up menu height
 	showmode = false, -- we don't need to see things like -- INSERT -- anymore
-	showtabline = 2, -- always show tabs
 	smartcase = true, -- smart case
 	smartindent = true, -- make indenting smarter again
 	splitbelow = true, -- force all horizontal splits to go below current window
@@ -36,14 +33,11 @@ local options = {
 	numberwidth = 1, -- set number column width to 2 {default 4}
 	signcolumn = "yes", -- always show the sign column, otherwise it would shift the text each time
 	-- wrap = false, -- display lines as one long line
-	scrolloff = 8, -- minimal number of screen lines to keep above and below the cursor.
-	sidescrolloff = 8, -- minimal number of screen lines to keep left and right of the cursor.
 	-- open fold
 	-- foldmethod = "expr",
 	-- foldexpr = "nvim_treesitter#foldexpr()",
 	foldlevel = 99,
 	-- Editor UI
-	noshowmode, -- Don't show mode in cmd window
 	shortmess = "aoOTI", -- Shorten messages and don't show intro
 	scrolloff = 2, -- Keep at least 2 lines above/below
 	sidescrolloff = 5, -- Keep at least 5 lines left/right
@@ -53,10 +47,8 @@ local options = {
 	winminwidth = 1, -- Minimum width for inactive windows
 	winheight = 1, -- Minimum height for active window
 	winminheight = 1, -- Minimum height for inactive window
-	noshowcmd, -- Don't show command in status line
 	cmdheight = 1, -- Height of the command line
 	cmdwinheight = 5, -- Command-line lines
-	equalalways, -- Resize windows on split or close
 	laststatus = 2, -- Always show a status line
 	colorcolumn = "+0", -- Column highlight at textwidth's max character-limit
 	display = "lastline",
@@ -71,4 +63,7 @@ end
 
 -- vim.cmd("set whichwrap+=<,>,[,],h,l") -- jump to next or above line
 vim.cmd([[set iskeyword+=-]])
+vim.cmd([[set noshowmode]]) -- Don't show mode in cmd window
+vim.cmd([[set noshowcmd]]) -- Don't show command in status line
+
 vim.cmd([[set formatoptions-=cro]]) -- TODO: this doesn't seem to work

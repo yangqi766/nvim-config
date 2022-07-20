@@ -47,16 +47,18 @@ return packer.startup(function(use)
 	use({ "akinsho/bufferline.nvim", tag = "v2.*", requires = "kyazdani42/nvim-web-devicons" })
 	use("moll/vim-bbye")
 	use("nvim-lualine/lualine.nvim")
+	use("simrat39/symbols-outline.nvim")
 	use("akinsho/toggleterm.nvim")
 	use("ahmedkhalf/project.nvim")
 	use("lewis6991/impatient.nvim")
-	use("lukas-reineke/indent-blankline.nvim")
+	-- use("lukas-reineke/indent-blankline.nvim")
 	use("goolord/alpha-nvim")
 	use("antoinemadec/FixCursorHold.nvim") -- This is needed to fix lsp doc highlight
 	use({ "folke/which-key.nvim", commit = "a3c19ec5754debb7bf38a8404e36a9287b282430" })
 
 	-- Colorschemes
 	-- use "rafi/colorschemes" -- A bunch of colorschemes you can try out
+	use({ "lunarvim/onedarker.nvim", commit = "b00dd2189f264c5aeb4cf04c59439655ecd573ec" })
 	use("rafi/awesome-vim-colorschemes")
 
 	-- cmp plugins
@@ -81,7 +83,9 @@ return packer.startup(function(use)
 	-- Telescope
 	use({ "nvim-telescope/telescope.nvim", commit = "a36a813d5d031e6f5d52b74986915e68130febd9" })
 
-	-- Treesitter
+	-- Syntax
+	use("nathanaelkane/vim-indent-guides")
+	use("tpope/vim-sleuth")
 	use({
 		"nvim-treesitter/nvim-treesitter",
 		commit = "94255915e659b83e8c57fd2ec0d6791995326f66",
@@ -98,7 +102,7 @@ return packer.startup(function(use)
 	use({ "tpope/vim-surround" })
 
 	-- Tagbar
-	use("preservim/tagbar")
+	-- use("preservim/tagbar")
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

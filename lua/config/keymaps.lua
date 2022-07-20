@@ -112,8 +112,8 @@ keymap("c", "<C-l>", "<Right>", {})
 keymap("c", "<C-a>", "<Home>", {})
 keymap("c", "<C-e>", "<End>", {})
 
--- tagbar
-keymap("n", "<C-t>", ":Tagbar<CR>", opts)
+-- symbol outline
+keymap("n", "<localleader>s", ":SymbolsOutlineOpen<CR>", opts)
 
 -- copy buffer terminal
 keymap("v", "<leader>p", '"*p', opts)

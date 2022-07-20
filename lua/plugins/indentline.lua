@@ -1,70 +1,35 @@
-local status_ok, indent_blankline = pcall(require, "indent_blankline")
-if not status_ok then
-	return
-end
+vim.g.indent_guides_enable_on_vim_startup = 0
+vim.g.indent_guides_default_mapping = 0
+vim.g.indent_guides_tab_guides = 0
+vim.g.indent_guides_color_change_percent = 3
+vim.g.indent_guides_auto_colors = 0
+vim.g.indent_guides_guide_size = 1
+vim.api.nvim_exec(
+	[[
+    let g:indent_guides_exclude_filetypes = [
+      \ 'help', 'man', 'fern', 'defx', 'denite', 'denite-filter', 'startify',
+      \ 'vista', 'vista_kind', 'tagbar', 'lsp-hover', 'clap_input', 'fzf',
+      \ 'any-jump', 'gina-status', 'gina-commit', 'gina-log', 'minimap',
+      \ 'quickpick-filter', 'lsp-quickpick-filter', 'lspinfo' ]
 
-vim.g.indent_blankline_buftype_exclude = { "terminal", "nofile" }
-vim.g.indent_blankline_filetype_exclude = {
-	"help",
-	"startify",
-	"dashboard",
-	"packer",
-	"neogitstatus",
-	"NvimTree",
-	"Trouble",
-}
-vim.g.indentLine_enabled = 1
--- vim.g.indent_blankline_char = "│"
-vim.g.indent_blankline_char = "▏"
--- vim.g.indent_blankline_char = "▎"
-vim.g.indent_blankline_show_trailing_blankline_indent = false
-vim.g.indent_blankline_show_first_indent_level = true
-vim.g.indent_blankline_use_treesitter = true
-vim.g.indent_blankline_show_current_context = true
-vim.g.indent_blankline_context_patterns = {
-	"class",
-	"return",
-	"function",
-	"method",
-	"^if",
-	"^while",
-	"jsx_element",
-	"^for",
-	"^object",
-	"^table",
-	"block",
-	"arguments",
-	"if_statement",
-	"else_clause",
-	"jsx_element",
-	"jsx_self_closing_element",
-	"try_statement",
-	"catch_clause",
-	"import_statement",
-	"operation_type",
-}
--- HACK: work-around for https://github.com/lukas-reineke/indent-blankline.nvim/issues/59
-vim.wo.colorcolumn = "99999"
+    " set smarttab        " Tab insert blanks according to 'shiftwidth'
+    " set autoindent      " Use same indenting on new lines
+    " set smartindent     " Smart autoindenting on new lines
+    " set shiftround      " Round indent to multiple of 'shiftwidth'
 
-vim.cmd([[highlight IndentBlanklineIndent1 guifg=#E06C75 gui=nocombine]])
-vim.cmd([[highlight IndentBlanklineIndent2 guifg=#E5C07B gui=nocombine]])
-vim.cmd([[highlight IndentBlanklineIndent3 guifg=#98C379 gui=nocombine]])
-vim.cmd([[highlight IndentBlanklineIndent4 guifg=#56B6C2 gui=nocombine]])
-vim.cmd([[highlight IndentBlanklineIndent5 guifg=#61AFEF gui=nocombine]])
-vim.cmd([[highlight IndentBlanklineIndent6 guifg=#C678DD gui=nocombine]])
--- vim.opt.list = true
--- vim.opt.listchars:append "space:⋅"
--- vim.opt.listchars:append "space:"
--- vim.opt.listchars:append "eol:↴"
-
-indent_blankline.setup({
-	-- show_end_of_line = true,
-	-- space_char_blankline = " ",
-	show_current_context = true,
-	-- show_current_context_start = true,
-	-- char_highlight_list = {
-	--   "IndentBlanklineIndent1",
-	--   "IndentBlanklineIndent2",
-	--   "IndentBlanklineIndent3",
-	-- },
-})
+    augroup user_plugin_indentguides
+      autocmd!
+      autocmd BufEnter *
+        \ if ! empty(&l:filetype) && empty(&buftype) && ! &previewwindow
+        \|   if g:indent_guides_autocmds_enabled == 0 && &l:expandtab
+        \|     IndentGuidesEnable
+        \|   elseif g:indent_guides_autocmds_enabled == 1 && ! &l:expandtab
+        \|     IndentGuidesDisable
+        \|   endif
+        \| elseif g:indent_guides_autocmds_enabled == 1
+        \|   IndentGuidesDisable
+        \| endif
+    augroup END
+]],
+	true
+)

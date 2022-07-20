@@ -52,6 +52,8 @@ vim.cmd([[
     autocmd User AlphaReady set showtabline=0 | autocmd BufUnload <buffer> set showtabline=2
   augroup end
 
+  let g:sleuth_no_filetype_indent_on = 1
+  let g:sleuth_gitcommit_heuristics = 0
   " xnoremap <Leader>S y:execute @@<CR>:echo 'Sourced selection.'<CR>
   " nnoremap <Leader>S ^vg_y:execute @@<CR>:echo 'Sourced line.'<CR>
   
