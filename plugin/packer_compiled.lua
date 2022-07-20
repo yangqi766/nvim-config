@@ -94,6 +94,11 @@ _G.packer_plugins = {
     path = "/home/zhenjiema/.local/share/nvim/site/pack/packer/start/alpha-nvim",
     url = "https://github.com/goolord/alpha-nvim"
   },
+  ["awesome-vim-colorschemes"] = {
+    loaded = true,
+    path = "/home/zhenjiema/.local/share/nvim/site/pack/packer/start/awesome-vim-colorschemes",
+    url = "https://github.com/rafi/awesome-vim-colorschemes"
+  },
   ["bufferline.nvim"] = {
     loaded = true,
     path = "/home/zhenjiema/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
@@ -124,11 +129,6 @@ _G.packer_plugins = {
     path = "/home/zhenjiema/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  ["darkplus.nvim"] = {
-    loaded = true,
-    path = "/home/zhenjiema/.local/share/nvim/site/pack/packer/start/darkplus.nvim",
-    url = "https://github.com/lunarvim/darkplus.nvim"
-  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/home/zhenjiema/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -143,11 +143,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/zhenjiema/.local/share/nvim/site/pack/packer/start/impatient.nvim",
     url = "https://github.com/lewis6991/impatient.nvim"
-  },
-  ["indent-blankline.nvim"] = {
-    loaded = true,
-    path = "/home/zhenjiema/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
-    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,
@@ -234,10 +229,10 @@ _G.packer_plugins = {
     path = "/home/zhenjiema/.local/share/nvim/site/pack/packer/start/project.nvim",
     url = "https://github.com/ahmedkhalf/project.nvim"
   },
-  tagbar = {
+  ["symbols-outline.nvim"] = {
     loaded = true,
-    path = "/home/zhenjiema/.local/share/nvim/site/pack/packer/start/tagbar",
-    url = "https://github.com/preservim/tagbar"
+    path = "/home/zhenjiema/.local/share/nvim/site/pack/packer/start/symbols-outline.nvim",
+    url = "https://github.com/simrat39/symbols-outline.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
@@ -259,10 +254,15 @@ _G.packer_plugins = {
     path = "/home/zhenjiema/.local/share/nvim/site/pack/packer/start/vim-easymotion",
     url = "https://github.com/easymotion/vim-easymotion"
   },
-  ["vim-hybrid"] = {
+  ["vim-indent-guides"] = {
     loaded = true,
-    path = "/home/zhenjiema/.local/share/nvim/site/pack/packer/start/vim-hybrid",
-    url = "https://github.com/w0ng/vim-hybrid"
+    path = "/home/zhenjiema/.local/share/nvim/site/pack/packer/start/vim-indent-guides",
+    url = "https://github.com/nathanaelkane/vim-indent-guides"
+  },
+  ["vim-sleuth"] = {
+    loaded = true,
+    path = "/home/zhenjiema/.local/share/nvim/site/pack/packer/start/vim-sleuth",
+    url = "https://github.com/tpope/vim-sleuth"
   },
   ["vim-surround"] = {
     loaded = true,

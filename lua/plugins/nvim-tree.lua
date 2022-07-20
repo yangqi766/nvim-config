@@ -66,6 +66,17 @@ local toggle_width = function(_)
 	vim.cmd(new_width .. " wincmd |")
 end
 
+-- Get current opened directory from state.
+local function get_current_directory(state)
+	local node = state.tree:get_node()
+	local path = node.path
+	if node.type ~= "directory" or not node:is_expanded() then
+		local path_separator = package.config:sub(1, 1)
+		path = path:match("(.*)" .. path_separator)
+	end
+	return path
+end
+
 nvim_tree.setup({
 	disable_netrw = true,
 	hijack_netrw = true,
@@ -142,6 +153,22 @@ nvim_tree.setup({
 				{ key = "p", action = "paste" },
 				{ key = "w", action = "toggle_width", action_cb = toggle_width },
 				{ key = "/", action = "fuzzy_finder" },
+				{
+					key = "gf",
+					action = function(state)
+						require("telescope.builtin").find_files({
+							cwd = get_current_directory(state),
+						})
+					end,
+				},
+				{
+					key = "gr",
+					action = function(state)
+						require("telescope.builtin").live_grep({
+							cwd = get_current_directory(state),
+						})
+					end,
+				},
 			},
 		},
 		number = false,

@@ -33,8 +33,8 @@ local options = {
 	numberwidth = 1, -- set number column width to 2 {default 4}
 	signcolumn = "yes", -- always show the sign column, otherwise it would shift the text each time
 	-- wrap = false, -- display lines as one long line
-	-- open fold
 	-- foldmethod = "expr",
+	-- open fold
 	-- foldexpr = "nvim_treesitter#foldexpr()",
 	foldlevel = 99,
 	-- Editor UI
@@ -51,6 +51,7 @@ local options = {
 	cmdwinheight = 5, -- Command-line lines
 	laststatus = 2, -- Always show a status line
 	colorcolumn = "+0", -- Column highlight at textwidth's max character-limit
+	textwidth = 80, -- Text width maximum chars before wrapping
 	display = "lastline",
 }
 

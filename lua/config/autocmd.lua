@@ -54,6 +54,8 @@ vim.cmd([[
 
   let g:sleuth_no_filetype_indent_on = 1
   let g:sleuth_gitcommit_heuristics = 0
+  setlocal cursorline colorcolumn= signcolumn=yes
+
   " xnoremap <Leader>S y:execute @@<CR>:echo 'Sourced selection.'<CR>
   " nnoremap <Leader>S ^vg_y:execute @@<CR>:echo 'Sourced line.'<CR>
   
