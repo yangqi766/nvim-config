@@ -1,7 +1,7 @@
 local options = {
 	backup = false, -- creates a backup file
 	clipboard = "unnamedplus", -- allows neovim to access the system clipboard
-	cmdheight = 2, -- more space in the neovim command line for displaying messages
+	cmdheight = 1, -- more space in the neovim command line for displaying messages
 	colorcolumn = "99999", -- fixes indentline for now
 	completeopt = { "menuone", "noselect" },
 	conceallevel = 0, -- so that `` is visible in markdown files
@@ -42,6 +42,24 @@ local options = {
 	-- foldmethod = "expr",
 	-- foldexpr = "nvim_treesitter#foldexpr()",
 	foldlevel = 99,
+	-- Editor UI
+	noshowmode, -- Don't show mode in cmd window
+	shortmess = "aoOTI", -- Shorten messages and don't show intro
+	scrolloff = 2, -- Keep at least 2 lines above/below
+	sidescrolloff = 5, -- Keep at least 5 lines left/right
+	showtabline = 2, -- Always show the tabs line
+	helpheight = 0, -- Disable help window resizing
+	winwidth = 25, -- Minimum width for active window
+	winminwidth = 1, -- Minimum width for inactive windows
+	winheight = 1, -- Minimum height for active window
+	winminheight = 1, -- Minimum height for inactive window
+	noshowcmd, -- Don't show command in status line
+	cmdheight = 1, -- Height of the command line
+	cmdwinheight = 5, -- Command-line lines
+	equalalways, -- Resize windows on split or close
+	laststatus = 2, -- Always show a status line
+	colorcolumn = "+0", -- Column highlight at textwidth's max character-limit
+	display = "lastline",
 }
 
 ---  SETTINGS  ---
