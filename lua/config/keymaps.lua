@@ -55,6 +55,9 @@ keymap("n", "<leader>w", "<cmd>w<CR>", opts)
 keymap("n", "<leader>q", "<cmd>q<CR>", opts)
 keymap("n", "qq", "<cmd>Bdelete<CR>", opts)
 keymap("n", "<C-q>", "<cmd>q!<CR>", opts)
+keymap("n", "<C-a>", "<Home>", opts)
+keymap("n", "<C-e>", "<End>", opts)
+keymap("n", "bw", "bdw", opts)
 
 -- Double leader key for toggling visual-line mode
 keymap("n", "<leader><leader>", "V", opts)

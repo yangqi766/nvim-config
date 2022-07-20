@@ -56,10 +56,8 @@ return packer.startup(function(use)
 	use({ "folke/which-key.nvim", commit = "a3c19ec5754debb7bf38a8404e36a9287b282430" })
 
 	-- Colorschemes
-	-- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
-	use("lunarvim/darkplus.nvim")
-	use({"lunarvim/onedarker.nvim", commit = "b00dd2189f264c5aeb4cf04c59439655ecd573ec"})
-	use("w0ng/vim-hybrid")
+	-- use "rafi/colorschemes" -- A bunch of colorschemes you can try out
+	use("rafi/awesome-vim-colorschemes")
 
 	-- cmp plugins
 	use({ "hrsh7th/nvim-cmp", commit = "71d7f46b930bf08e982925c77bd9b0a9808c1162" }) -- The completion plugin
