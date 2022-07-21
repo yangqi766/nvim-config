@@ -7,6 +7,25 @@ local function is_ft(b, ft)
 	return vim.bo[b].filetype == ft
 end
 
+local function split(input, delimiter)
+	input = tostring(input)
+	delimiter = tostring(delimiter)
+	if delimiter == "" then
+		return false
+	end
+	local pos, arr = 0, {}
+	for st, sp in
+		function()
+			return string.find(input, delimiter, pos, true)
+		end
+	do
+		table.insert(arr, string.sub(input, pos, st - 1))
+		pos = sp + 1
+	end
+	table.insert(arr, string.sub(input, pos))
+	return arr
+end
+
 local function diagnostics_indicator(_, _, diagnostics)
 	local result = {}
 	local symbols = { error = "", warning = "", info = "" }
@@ -79,14 +98,19 @@ bufferline.setup({
 				highlight = "PanelHeading",
 				padding = 1,
 			},
-			-- {
-			-- 	filetype = "NvimTree",
-			-- 	text = "Explorer",
-			-- 	-- highlight = "PanelHeading",
-			-- 	highlight = "Directory",
-			-- 	-- padding = 1,
-			-- 	text_align = "center",
-			-- },
+			{
+				filetype = "NvimTree",
+				text = function()
+					local cwd = vim.fn.getcwd()
+					local result = split(cwd, "/")
+					local count = #result
+					return tostring(count)
+					-- return result[count - 1] + "/" + result[count]
+				end,
+				highlight = "Directory",
+				padding = 1,
+				-- text_align = "center",
+			},
 			{
 				filetype = "DiffviewFiles",
 				text = "Diff View",

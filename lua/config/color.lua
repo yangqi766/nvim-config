@@ -1,5 +1,4 @@
-vim.api.nvim_exec(
-	[[
+vim.cmd([[
   try
    " colorscheme onedarker
    set background=dark
@@ -8,7 +7,6 @@ vim.api.nvim_exec(
   " colorscheme solarized8_low
   colorscheme solarized8_flat
   " colorscheme oceanic_material
-  " colorscheme deus
   " autocmd BufWinEnter * :hi VertSplit ctermfg=bg ctermbg=bg guifg=bg guibg=bg
   catch /^Vim\%((\a\+)\)\=:E185/
     colorscheme default
@@ -16,6 +14,4 @@ vim.api.nvim_exec(
   endtry
    " let g:colors_name = "hybrid"
    " execute 'source' fnameescape("~/.config/nvim-config/themes/hybrid.vim")
-]],
-	true
-)
+]])

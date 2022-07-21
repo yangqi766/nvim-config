@@ -41,6 +41,8 @@ keymap("n", "<leader>5", ":BufferLineGoToBuffer 5<CR>", opts)
 keymap("n", "<leader>6", ":BufferLineGoToBuffer 6<CR>", opts)
 keymap("n", "<leader>7", ":BufferLineGoToBuffer 7<CR>", opts)
 keymap("n", "<leader>8", ":BufferLineGoToBuffer 8<CR>", opts)
+keymap("n", "cr", ":BufferLineCloseRight<CR>", opts)
+keymap("n", "cl", ":BufferLineCloseLeft<CR>", opts)
 keymap("n", "<leader>c", ":BufferLinePickClose<CR>", opts)
 
 -- accelerated j k
@@ -55,9 +57,13 @@ keymap("n", "<leader>w", "<cmd>w<CR>", opts)
 keymap("n", "<leader>q", "<cmd>q<CR>", opts)
 keymap("n", "qq", "<cmd>Bdelete<CR>", opts)
 keymap("n", "<C-q>", "<cmd>q!<CR>", opts)
+
+-- moving to beginning and end
 keymap("n", "<C-a>", "<Home>", opts)
 keymap("n", "<C-e>", "<End>", opts)
-keymap("n", "bw", "bdw", opts)
+
+-- Better word actions
+keymap("n", "dw", "bviwd", opts)
 
 -- Double leader key for toggling visual-line mode
 keymap("n", "<leader><leader>", "V", opts)
@@ -95,7 +101,7 @@ keymap("i", "<C-h>", "<Left>", opts)
 keymap("i", "<C-l>", "<Right>", opts)
 keymap("i", "<C-k>", "<Up>", opts)
 keymap("i", "<C-j>", "<Down>", opts)
-keymap("i", "<C-w>", "<ESC>wa", opts)
+keymap("i", "<C-w>", "<ESC>wi", opts)
 keymap("i", "<C-b>", "<ESC>bi", opts)
 keymap("i", "<C-o>", "<ESC>o", opts) -- switch to next new line
 keymap("i", "<C-a>", "<ESC>I", opts) -- jump to begin
@@ -105,6 +111,8 @@ keymap("i", "<C-h>", "<Left>", opts)
 keymap("i", "<C-l>", "<Right>", opts)
 keymap("i", "<C-a>", "<Home>", opts)
 keymap("i", "<C-e>", "<End>", opts)
+-- Better word actions
+-- keymap("i", "dw", "<ECS>", opts)
 
 -- command --
 keymap("c", "<C-h>", "<Left>", {})

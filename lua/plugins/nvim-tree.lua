@@ -42,7 +42,7 @@ vim.g.nvim_tree_icons = {
 	},
 }
 
-local winwidth = 28
+local winwidth = 20
 
 local toggle_width = function(_)
 	local max = 0
@@ -67,14 +67,31 @@ local toggle_width = function(_)
 end
 
 -- Get current opened directory from state.
-local function get_current_directory(state)
-	local node = state.tree:get_node()
-	local path = node.path
-	if node.type ~= "directory" or not node:is_expanded() then
-		local path_separator = package.config:sub(1, 1)
-		path = path:match("(.*)" .. path_separator)
-	end
-	return path
+-- local function get_current_directory(state)
+-- 	local node = state.tree:get_node()
+-- 	local path = node.path
+-- 	if node.type ~= "directory" or not node:is_expanded() then
+-- 		local path_separator = package.config:sub(1, 1)
+-- 		path = path:match("(.*)" .. path_separator)
+-- 	end
+-- 	return path
+-- end
+
+local function start_telescope(telescope_mode)
+	local node = require("nvim-tree.lib").get_node_at_cursor()
+	local abspath = node.link_to or node.absolute_path
+	local is_folder = node.open ~= nil
+	local basedir = is_folder and abspath or vim.fn.fnamemodify(abspath, ":h")
+	require("telescope.builtin")[telescope_mode]({
+		cwd = basedir,
+	})
+end
+
+local function telescope_find_files(_)
+	start_telescope("find_files")
+end
+local function telescope_live_grep(_)
+	start_telescope("live_grep")
 end
 
 nvim_tree.setup({
@@ -133,7 +150,7 @@ nvim_tree.setup({
 	view = {
 		width = winwidth,
 		height = 30,
-		hide_root_folder = false,
+		hide_root_folder = true,
 		side = "left",
 		auto_resize = true,
 		preserve_window_proportions = false,
@@ -155,19 +172,13 @@ nvim_tree.setup({
 				{ key = "/", action = "fuzzy_finder" },
 				{
 					key = "gf",
-					action = function(state)
-						require("telescope.builtin").find_files({
-							cwd = get_current_directory(state),
-						})
-					end,
+					action = "telescope_find_files",
+					action_cb = telescope_find_files,
 				},
 				{
 					key = "gr",
-					action = function(state)
-						require("telescope.builtin").live_grep({
-							cwd = get_current_directory(state),
-						})
-					end,
+					action = "telescope_live_grep",
+					action_cb = telescope_live_grep,
 				},
 			},
 		},
