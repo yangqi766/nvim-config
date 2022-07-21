@@ -63,7 +63,9 @@ keymap("n", "<C-a>", "<Home>", opts)
 keymap("n", "<C-e>", "<End>", opts)
 
 -- Better word actions
-keymap("n", "dw", "bviwd", opts)
+keymap("n", "bw", "bviwd", opts)
+keymap("n", "yk", "v$y", opts)
+keymap("n", "vk", "v$", opts)
 
 -- Double leader key for toggling visual-line mode
 keymap("n", "<leader><leader>", "V", opts)

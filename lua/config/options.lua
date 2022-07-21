@@ -63,8 +63,17 @@ for k, v in pairs(options) do
 end
 
 -- vim.cmd("set whichwrap+=<,>,[,],h,l") -- jump to next or above line
-vim.cmd([[set iskeyword+=-]])
-vim.cmd([[set noshowmode]]) -- Don't show mode in cmd window
-vim.cmd([[set noshowcmd]]) -- Don't show command in status line
+vim.api.nvim_exec(
+	[[
+	set iskeyword+=-
+	set noshowmode
+	set noshowcmd
+	set ignorecase
+	set smartcase
+	set infercase
+	set incsearch
+	set wrapscan]],
+	true
+)
 
 vim.cmd([[set formatoptions-=cro]]) -- TODO: this doesn't seem to work

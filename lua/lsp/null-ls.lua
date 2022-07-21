@@ -10,7 +10,7 @@ local diagnostics = null_ls.builtins.diagnostics
 null_ls.setup({
 	debug = false,
 	sources = {
-		formatting.prettier.with({ -- 比默认少了 markdown
+		formatting.prettier.with({
 			filetypes = {
 				"javascript",
 				"javascriptreact",
@@ -27,14 +27,14 @@ null_ls.setup({
 			},
 			prefer_local = "node_modules/.bin",
 		}),
-		formatting.black.with({ extra_args = { "--fast", "--line-length=100", "-S" } }),
+		formatting.black.with({ extra_args = { "--line-length=100" } }),
 		formatting.stylua,
 		formatting.golines,
 		diagnostics.eslint_d.with({
 			prefer_local = "node_modules/.bin",
 		}),
 		diagnostics.flake8.with({
-			extra_args = { "--max-line-length=150", "--inline-quotes=double,single" },
+			extra_args = { "--max-line-length=100", "--ignore=Q000,C101,E265" },
 		}),
 	},
 	on_attach = function(client)

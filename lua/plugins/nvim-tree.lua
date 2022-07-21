@@ -42,7 +42,7 @@ vim.g.nvim_tree_icons = {
 	},
 }
 
-local winwidth = 20
+local winwidth = 25
 
 local toggle_width = function(_)
 	local max = 0
@@ -139,7 +139,7 @@ nvim_tree.setup({
 		args = {},
 	},
 	filters = {
-		dotfiles = false,
+		dotfiles = true,
 		custom = {},
 	},
 	git = {
@@ -169,7 +169,6 @@ nvim_tree.setup({
 				{ key = "x", action = "cut" },
 				{ key = "p", action = "paste" },
 				{ key = "w", action = "toggle_width", action_cb = toggle_width },
-				{ key = "/", action = "fuzzy_finder" },
 				{
 					key = "gf",
 					action = "telescope_find_files",
@@ -188,7 +187,7 @@ nvim_tree.setup({
 	},
 	renderer = {
 		indent_markers = {
-			enable = false,
+			enable = true,
 			icons = {
 				corner = "└ ",
 				edge = "│ ",
@@ -229,7 +228,7 @@ nvim_tree.setup({
 	disable_window_picker = 0,
 	root_folder_modifier = ":t",
 	show_icons = {
-		git = 1,
+		git = 0,
 		folders = 1,
 		files = 1,
 		folder_arrows = 1,
