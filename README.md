@@ -15,6 +15,10 @@ git clone https://github.com/LunarVim/Neovim-from-scratch.git ~/.config/nvim
 Install lsp format tools:
   1. stylua  install cargo  , cargo install stylua
   2. pip install black flake8
+  3. npm install --global prettier
+
+Istall clipboard tools
+  1. sudo apt install xcli
 ```
 
 Run `nvim` and wait for the plugins to be installed 
